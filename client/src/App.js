@@ -32,13 +32,11 @@ export default function App() {
             </div> 
         </div>
       </nav>  
-    </div>
-     
+    </div>     
       <div className="row text-center mt-5">
         <h1>Karenina Photography</h1>
       </div>
-    </div>
-        
+    </div>        
       
       <div className='d-flex justify-content-center'>           
       <Switch>             
