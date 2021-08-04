@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "migrate": "node model/database.js"
+    "start":"nodemon ./bin/www",
+    "migrate": "node model/database.js" 
+   
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

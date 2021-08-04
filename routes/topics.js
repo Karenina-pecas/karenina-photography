@@ -58,5 +58,4 @@ router.get('/:topic_id/photos', async (req, res, next) => {
 });
 
 
-
 module.exports = router;
