@@ -153,44 +153,40 @@ export default function AddTopic() {
             </button>
           </div>
         </form>
-      </div>
+        {error && <div class='text-white'>{error}</div>}
 
-      {error && <div class='alert font-monospace mb-md-0 mt-3 mt-lg-auto small  text-warning'>{error}</div>}
-
-      {message && (
-        <div class='alert font-monospace mb-md-0 mt-3 mt-lg-auto small text-success'>{message}</div>
-      )}
-
-      <div class='list-group text-center'>
-        <div class='row'>
-          <div class='col'>
-            <label class='text-secondary small'>Theme</label>
-          </div>
-          <div class='col text-center'>
-            <label class='text-secondary small'>Topic Id</label>
-          </div>
-          <div class='col'></div>
+        {message && <div class='text-white'>{message}</div>}
+        <div class='rounded-lg'>
+          <table class='w-full table-fixed max-w-sm shadow-sm rounded mb-4 mx-7 border text-white'>
+            <thead class='grid-cols-1 divide-y divide-white'>
+              <tr>
+                <th class='text-center'>Theme</th>
+                <th class='text-center'>Id</th>
+              </tr>
+              <tr></tr>
+            </thead>
+            <tbody class='grid-cols-1 divide-y divide-gray-200'>
+              {topics.map((topic, i) => (
+                <tr key={i}>
+                  <td class='text-center'>{topic.theme}</td>
+                  <td class='text-center'>{topic.topic_id}</td>
+                  <td>
+                    <button
+                      onClick={() => deleteTopic(topic.topic_id)}
+                      class='inline-flex items-center justify-center mb-1 mt-1 w-6 h-6 mr-2 text-white-100 transition-colors duration-150 bg-gray-500 rounded-lg focus:shadow-outline hover:bg-gray-700 border'>
+                      <svg class='w-4 h-4 fill-current' viewBox='0 0 20 20'>
+                        <path
+                          d='M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306'
+                          clip-rule='evenodd'
+                          fill-rule='evenodd'></path>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-
-        {topics.map((topic, i) => (
-          <div class='justify-content-between mb-4' key={i}>
-            <div class='row'>
-              <div class='col'>
-                <label class='text-white-50'>{topic.theme}</label>
-              </div>
-              <div class='col text-center'>
-                <label class='text-white-50'>{topic.topic_id}</label>
-              </div>
-              <div class='col'>
-                <button
-                  onClick={() => deleteTopic(topic.topic_id)}
-                  class='btn btn-sm btn-light bg-transparent text-white-50'>
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
