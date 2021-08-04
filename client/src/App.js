@@ -11,9 +11,9 @@ export default function App() {
   return (
     <Router>
       <nav class='bg-black grid-cols-4 '>
-        <div class='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+        <div class='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 mb-14'>
           <div class='relative flex items-center justify-between h-16'>
-            <div class='absolute inset-y-0  flex items-center md:right-1.5'>
+            <div class='absolute inset-y-0 flex items-center md:right-1.5'>
               <div class='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
                 <div class='flex-shrink-0 flex items-center'>
                   <div class='flex space-x-4'>

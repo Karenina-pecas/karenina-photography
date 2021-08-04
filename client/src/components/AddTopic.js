@@ -88,12 +88,15 @@ export default function AddTopic() {
 
   return (
     <div>
-      <div class='md:flex md:justify-center'>
-        <div class='md:flex max-w-sm'>
-          <h1 class='text-gray-300'>Admin Dashboard</h1>
-        </div>
-
-        <form class='w-full max-w-sm shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={handleSubmit}>
+      <div class='md:flex justify-center'>
+        <form
+          class='w-full max-w-sm shadow-md rounded px-8 pt-6 pb-8 mb-4 border ml-7'
+          onSubmit={handleSubmit}>
+          <div class='w-full max-w-sm text-center'>
+            <div class='md:flex md:items-center justify-around mb-4'>
+              <h1 class='text-gray-300 font-bold text-lg'>Admin View</h1>
+            </div>
+          </div>
           <div class='md:flex md:items-center mb-6'>
             <div class='md:w-1/3'>
               <label class='block text-gray-500 font-bold md:text-rigth mb-1 md:mb-0 pr-4' for='inline-theme'>
