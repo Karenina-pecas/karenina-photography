@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const errorMessage = 'There was a problem, please try again later';
-const errorMessageDelete = 'You cannot delete this topic because it contains an album';
+const errorMessageDelete = 'You cannot delete this theme because it contains an album';
 
 export default function AddTopic() {
   const [error, setError] = useState('');
@@ -90,7 +90,7 @@ export default function AddTopic() {
     <div>
       <div class='md:flex justify-center'>
         <form
-          class='w-full max-w-sm shadow-md rounded px-8 pt-6 pb-8 mb-4 border ml-7'
+          class='w-full max-w-sm shadow-md rounded px-8 pt-6 pb-8 mb-4 border ml-7 mt-3'
           onSubmit={handleSubmit}>
           <div class='w-full max-w-sm text-center'>
             <div class='md:flex md:items-center justify-around mb-4'>
@@ -153,10 +153,13 @@ export default function AddTopic() {
             </button>
           </div>
         </form>
-        {error && <div class='text-white'>{error}</div>}
 
-        {message && <div class='text-white'>{message}</div>}
         <div class='rounded-lg'>
+          <div class='w-full max-w-sm italic text-center mx-7 mb-3'>
+            {error && <div class='text-white'>{error}</div>}
+
+            {message && <div class='text-white'>{message}</div>}
+          </div>
           <table class='w-full table-fixed max-w-sm shadow-sm rounded mb-4 mx-7 border text-white'>
             <thead class='grid-cols-1 divide-y divide-white'>
               <tr>
